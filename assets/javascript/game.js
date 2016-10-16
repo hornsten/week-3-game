@@ -11,7 +11,8 @@ var answer = {	pacman: ["P","A","C","M","A","N"],
 		
 	};
 
-
+	
+	
 	document.onkeyup = function(event) {
 
 
@@ -23,6 +24,12 @@ var answer = {	pacman: ["P","A","C","M","A","N"],
 				tries--;
 			document.getElementById("tries").innerHTML = tries;
 			}
+
+		if(tries === 0) {
+			document.getElementById("solved").innerHTML = "You lose.";
+			
+
+		}
 
 
 
@@ -58,10 +65,15 @@ var answer = {	pacman: ["P","A","C","M","A","N"],
 
 	document.getElementById("wins").innerHTML = wins;
 
+
 		}
 
 
 	}
+
+
+
+
 
 
 
