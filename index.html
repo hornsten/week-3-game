@@ -19,10 +19,6 @@
 
 <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Inline" rel="stylesheet">
 
-
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="assets/javascript/game.js"></script>
 	
 	<title>Hangman Game</title>
@@ -33,15 +29,36 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<h1>Hangman</h1>
-			<p id="l0">-<p>
-<p id="l1">-</p>
-<p id="l2">-</p>
-<p id="l3">-</p>
-<p id="l4">-</p>
-<p id="l5">-</p>
 		</div>
 	</div>
-</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<p>Tries left: </p><p id="tries">15</p>
+		</div>
+		<div class="col-xs-6">
+			<p>Wins: </p><p id="wins"></p>
+
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="col-xs-6"></div>
+		<div class="col-xs-6">
+
+				<p class="letter" id="l0">_ </p>
+				<p class="letter" id="l1">_ </p>
+				<p class="letter" id="l2">_ </p>
+				<p class="letter" id="l3">_ </p>
+				<p class="letter" id="l4">_ </p>
+				<p class="letter" id="l5">_ </p>
+				<div class="col-xs-6"></div>
+	</div>
+	<div class="row">
+	<div class="col-xs-6"></div>
+	<div class="col-xs-6">
+		<p id="solved"></p>
+	</div>
+		</div>
 
 </body>
 </html>
