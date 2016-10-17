@@ -1,8 +1,10 @@
 
 body {
-border-top: 5px dotted purple;
-font-family: 'Bungee Hairline', cursive;
-font-size: 100%;
+	border-top: 15px dashed purple;
+	font-family: 'Bungee Hairline', cursive;
+	font-size: 100%;
+
+/*Creates starry background*/
 background-color:black;
 background-image:
 radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
@@ -11,11 +13,9 @@ radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
 radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
 background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
 background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+/**************************/
 }
 
-ul {
-	color: white;
-}
 
 h1 {
 	font-family: 'Bungee Inline', cursive;
@@ -30,5 +30,10 @@ p {
 	font-size: 4vw;
 }
 
+#solved {
+
+	color:red;
+	font-size: 15vw;
+}
 
 

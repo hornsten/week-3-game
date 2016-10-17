@@ -1,4 +1,3 @@
-		
 var pacman = ['P','A','C','M','A','N'];
 var digdug = ['D','I','G','D','U','G'];
 var mario = ['M','A','R','I','O'];
@@ -12,6 +11,7 @@ var spentLetters = [];
 		function check(arr) {
 		document.onkeyup = function(event) {
 		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+				
 				for(var i = 0; i < arr.length; i++) {
 
 				if(userGuess === arr[i]) {
@@ -30,20 +30,16 @@ var spentLetters = [];
 		if(arr.length === 0 && tries > 0) {
 			wins++;
 			document.getElementById("wins").innerHTML = wins;
-
+			document.getElementById("solved").style.color="green";
+			document.getElementById("solved").innerHTML = "you win!";
 			} 
 
 			if (arr.length > 0 && tries === 0) {
-				console.log("You lose.");
+			document.getElementById("solved").innerHTML = "you lose";
 			}
 
 		}
 		
 	} // my function
 
-	
-check(pacman);
-
-
-
-
+check(mario);
