@@ -1,79 +1,49 @@
-
-var correctGuesses = 0;
-	
+		
+var pacman = ['P','A','C','M','A','N'];
+var digdug = ['D','I','G','D','U','G'];
+var mario = ['M','A','R','I','O'];
 var wins = 0;
-var tries = 15;
-var pacman = ["P","A","C","M","A","N"];
 var spentLetters = [];
 
-		document.onkeyup = function(event) {
+document.onkeyup = function(event) {
 
 
 		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 
-// Check to see whether key pressed is in the spentLetters array. If it is not,
-// push to array.
+		function check(arr) {
 
-		if(spentLetters.indexOf(userGuess) === -1) {
-			spentLetters.push(userGuess);
-			document.getElementById("spentLetters").innerHTML = spentLetters.toString();
-				if(pacman.indexOf(userGuess) !== -1) {
-					if(pacman.indexOf(userGuess) === 0) {
-					document.getElementById("l0").innerHTML = userGuess;
-					correctGuesses++;
-					}  
-					if(pacman.indexOf(userGuess) === 1) {
-					document.getElementById("l1").innerHTML = userGuess;
-					correctGuesses++;
-					}
-					if(pacman.indexOf(userGuess) === 2) {
-					document.getElementById("l2").innerHTML = userGuess;
-					correctGuesses++;
-					}
-					if(pacman.indexOf(userGuess) === 3) {
-					document.getElementById("l3").innerHTML = userGuess;
-					correctGuesses++;
-					}
-					if(pacman.indexOf(userGuess,3) === 4) {
-					document.getElementById("l4").innerHTML = userGuess;
-					correctGuesses++;
-					}
-					if(pacman.indexOf(userGuess) === 5) {
-					document.getElementById("l5").innerHTML = userGuess;
-					correctGuesses++;
-					}
-				} else {
+			for(var i = 0; i < arr.length; i++) {
 
-					tries--;
-					document.getElementById("tries").innerHTML = tries;
+				if(userGuess === arr[i]) {
+					console.log(userGuess);
+					arr.splice(arr.indexOf(userGuess),1);
+					console.log(arr);
+					if(arr.length === 0) {
+						console.log("done");
+						wins++;
+						
+					 
+					}
+
 				}
-				
 
 			}
-
-		if(tries === 0) {
-			document.getElementById("solved").innerHTML = "You lose.";
-			
-
 		}
-
-
-		if(correctGuesses === pacman.length) {
-
-			document.getElementById("solved").innerHTML = "You Win!";
-			wins++;
-
-	document.getElementById("wins").innerHTML = wins;
-
-
-		}
-
-
+	check(mario);
+	
+		if(mario.length === 0) {
+		check(pacman);
 	}
+	console.log(wins);
+}
+
+	
 
 
-
-
-
-
+			// if(spentLetters.indexOf(userGuess) === -1 && tries > 0) {
+			// spentLetters.push(userGuess);
+			// console.log(spentLetters.toString());
+				// tries--;
+			// console.log(tries);
+			// }
 

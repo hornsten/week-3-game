@@ -31,35 +31,30 @@
 			<h1>Hangman</h1>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xs-6">
-			<p>Tries left: </p><p id="tries">15</p>
-			<p>Guessed letters: </p><p id="spentLetters"></p>
-		</div>
-		<div class="col-xs-6">
-			<p>Wins: </p><p id="wins"></p>
-
-		</div>
-
+	<div class="row text-center">
+		<div class="col-xs-12"><p id="solved"></p></div>
 	</div>
+</div>
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-6"></div>
+		<div class="col-xs-6" id="stats">
+			<p>Tries left: </p><p id="tries">15</p>
+			<p>Wins: </p><p id="wins"></p>
+		</div>
 		<div class="col-xs-6">
-
-				<p class="letter" id="l0">_ </p>
+			<p class="letter" id="l0">_ </p>
 				<p class="letter" id="l1">_ </p>
 				<p class="letter" id="l2">_ </p>
 				<p class="letter" id="l3">_ </p>
 				<p class="letter" id="l4">_ </p>
 				<p class="letter" id="l5">_ </p>
-				<div class="col-xs-6"></div>
+				<p>Guessed letters: </p>
+				<p id="spentLetters"></p>
+				</div>
 	</div>
-	<div class="row">
-	<div class="col-xs-6"></div>
-	<div class="col-xs-6">
-		<p id="solved"></p>
+	
+		
 	</div>
-		</div>
 
 </body>
 </html>

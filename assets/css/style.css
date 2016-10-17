@@ -1,6 +1,6 @@
 
 body {
-border-top: 50px dotted purple;
+border-top: 5px dotted purple;
 font-family: 'Bungee Hairline', cursive;
 font-size: 100%;
 background-color:black;
@@ -13,6 +13,8 @@ background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
 background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
 
+
+
 h1 {
 	font-family: 'Bungee Inline', cursive;
 	color: green;
@@ -21,7 +23,10 @@ h1 {
 }
 
 p {
-	color: white;
-	font-size: 5vw;
 	float: left;
+	
+	color: white;
+	font-size: 4vw;
 }
+
+
