@@ -3,18 +3,17 @@ var correctGuesses = 0;
 	
 var wins = 0;
 var tries = 15;
-var alpha = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S",
-			"T","U","V","W","X","Y","Z"];
-
 var pacman = ["P","A","C","M","A","N"];
+var guesses = [];
 
-	console.log(pacman);
 		document.onkeyup = function(event) {
 
 
 		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 
 		if(pacman.indexOf(userGuess) === -1) {
+			guesses.push(userGuess);
+			document.getElementById("guesses").innerHTML = guesses.toString();
 				tries--;
 			document.getElementById("tries").innerHTML = tries;
 
