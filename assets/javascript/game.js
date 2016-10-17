@@ -7,40 +7,43 @@ var wins = 0;
 var tries = 10;
 var spentLetters = [];
 
-document.onkeyup = function(event) {
-
-
-		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
-// ******* My Phat Phunction ***********************************
+// ******* My Function ***********************************
+		
 		function check(arr) {
-			if(arr.length === 0) {
-			console.log('you win');
-
-			} else {
-
+		document.onkeyup = function(event) {
+		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 				for(var i = 0; i < arr.length; i++) {
 
 				if(userGuess === arr[i]) {
-					console.log(userGuess);
 					arr.splice(arr.indexOf(userGuess),1);
 					console.log(arr);
-					} else {
-						if(spentLetters.indexOf(userGuess) === -1) {
-						spentLetters.push(userGuess);
-						console.log(spentLetters.toString())
-						tries--;
-					}
-				}//nested if
-			}//else
+					} 
+				
 		}//for loop
+
+		if(spentLetters.indexOf(userGuess) === -1 && arr.indexOf(userGuess) === -1){
+					spentLetters.push(userGuess);
+					document.getElementById("used").innerHTML = spentLetters.toString();
+					tries--;
+					document.getElementById("tries").innerHTML = tries;
+					}
+		if(arr.length === 0 && tries > 0) {
+			wins++;
+			document.getElementById("wins").innerHTML = wins;
+
+			} 
+
+			if (arr.length > 0 && tries === 0) {
+				console.log("You lose.");
+			}
+
+		}
+		
 	} // my function
-if(tries === 0) {
 
-		console.log("game over");
-
-	}
-
-	check(tetris); 
+	
+check(pacman);
 
 
- } // keycode event
+
+
