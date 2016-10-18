@@ -1,10 +1,10 @@
 var words = ['PACMAN','DIGDUG','SUPERMARIOBROS','TETRIS','CENTIPEDE','SPACEINVADERS','GALAGA',
-			'ASTEROIDS','DONKEYKONG','PONG','TRON','BURGERTIME','BERZERK','Q*BERT'];
+			'ASTEROIDS','DONKEYKONG','PONG','TRON','BURGERTIME','BERZERK','QBERT'];
 var word = words[Math.floor(Math.random() * words.length)];
 var wins = 0;
 var tries = 10;
 var spentLetters = [];
-var correctGuess = [];
+var correctGuess = 0;
 
 function getBlanks(arr) {
 
@@ -39,16 +39,17 @@ function check(arr) {
 				if(userGuess === arr[i]) {
 					
 					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess;
-
+					correctGuess++;
+					console.log(correctGuess);
 				} 
 
 // Determines when you have won
 
- // if(correctGuess.length === arr.length) {
- // 	document.getElementById("solved").style.color = "green";
- // 	document.getElementById("solved").innerHTML = "You Win!";
+ if(correctGuess === arr.length) {
+  	document.getElementById("solved").style.color = "green";
+  	document.getElementById("solved").innerHTML = "You Win!";
 
- // }	
+  }	
 		}
 
 
