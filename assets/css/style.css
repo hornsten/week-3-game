@@ -24,10 +24,19 @@ h1 {
 	text-shadow: 5px 5px purple;
 }
 
-p,#disp,li {
+p,#disp {
 	float: left;
 	color: white;
 	font-size: 4vw;
+}
+
+span {
+	color: green;
+	font-size: 5vw;
+	float: left;
+	text-align: center;
+	font-style: bold;
+	border: 1px solid purple;
 }
 
 #solved {
