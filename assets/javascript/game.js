@@ -31,10 +31,18 @@ word.innerHTML = htmlElements;
 
 }
 
+window.addEventListener("keypress", checkKeyPressed, false);
+ 
+function checkKeyPressed(e) {
+    if (e.charCode == "32") {
+   getBlanks(centipede);
+    }
+}
+
 		
 		document.onkeyup = function(event) {
 
-getBlanks(centipede);
+
 check(centipede);		
 
 function check(arr) {
