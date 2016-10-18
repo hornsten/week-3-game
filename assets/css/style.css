@@ -24,7 +24,7 @@ h1 {
 	text-shadow: 5px 5px purple;
 }
 
-p {
+p,#disp,li {
 	float: left;
 	color: white;
 	font-size: 4vw;

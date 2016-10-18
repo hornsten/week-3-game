@@ -1,4 +1,4 @@
-var pacman = ['P','A','C','M','A','N'];
+var pacman = "PACMAN";
 var digdug = ['D','I','G','D','U','G'];
 var mario = ['M','A','R','I','O'];
 var tetris = ['T','E','T','R','I','S'];
@@ -6,17 +6,20 @@ var wins = 0;
 var tries = 10;
 var spentLetters = [];
 
-// ******* My Function ***********************************
-		
+// ******* My Functions ***********************************
+
 		function check(arr) {
+
 		document.onkeyup = function(event) {
+
+
 		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 				
 				for(var i = 0; i < arr.length; i++) {
 
 				if(userGuess === arr[i]) {
-					arr.splice(arr.indexOf(userGuess),1);
-					console.log(arr);
+					
+					document.getElementsByTagName("LI")[i].innerHTML = userGuess;
 					} 
 				
 		}//for loop
@@ -42,4 +45,4 @@ var spentLetters = [];
 		
 	} // my function
 
-check(mario);
+check(digdug);
