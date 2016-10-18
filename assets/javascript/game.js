@@ -7,10 +7,37 @@ var wins = 0;
 var tries = 10;
 var spentLetters = [];
 
+// window.addEventListener("keydown", startGame, false);
 
-		function check(arr) {
 
+// function startGame(e) {
+    // gets called when any key is pressed
+
+// var myNode = document.getElementById("word");
+// while (myNode.firstChild) {
+//     myNode.removeChild(myNode.firstChild);
+// }
+
+// }
+
+function getBlanks(arr) {
+
+var htmlElements = "";
+for (var i = 0; i < arr.length; i++) {
+   htmlElements += '<span>_</span>';
+}
+var word = document.getElementById("word");
+word.innerHTML = htmlElements;
+
+}
+
+		
 		document.onkeyup = function(event) {
+
+getBlanks(centipede);
+check(centipede);		
+
+function check(arr) {
 
 // adds correct letters to span elements in the DOM
 		var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
@@ -40,7 +67,5 @@ var spentLetters = [];
 		} 
 
 	}
-		
 
 
-check(tetris);

@@ -32,11 +32,11 @@ p,#disp {
 
 span {
 	color: green;
-	font-size: 5vw;
+	font-size: 4vw;
 	float: left;
 	text-align: center;
 	font-style: bold;
-	border: 1px solid purple;
+	
 }
 
 #solved {
