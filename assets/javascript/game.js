@@ -17,11 +17,13 @@ blanks.innerHTML = htmlElements;
 
 }
 
+
 window.addEventListener("keypress", checkKeyPressed, false);
  
 function checkKeyPressed(e) {
     if (e.charCode == "32") {
-   getBlanks(word);
+   	getBlanks(word);
+
     }
 }
 
@@ -45,12 +47,15 @@ function check(arr) {
 
 // Determines when you have won
 
- if(correctGuess === arr.length) {
+
+  	}	
+
+if(correctGuess === arr.length) {
+  	wins++;
   	document.getElementById("solved").style.color = "green";
   	document.getElementById("solved").innerHTML = "You Win!";
-
-  }	
-		}
+  	document.getElementById("wins").innerHTML = wins;
+}
 
 
 
@@ -64,6 +69,7 @@ function check(arr) {
 //if you use up all your tries, you lose.					
 		if (tries === 0) {
 			document.getElementById("solved").innerHTML = "you lose";
+		
 			}
 			
 		} 
