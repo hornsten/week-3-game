@@ -12,10 +12,18 @@ var gameStarted = false;
 
 $(document).ready(function(){
 
-	 $("#start").on("click", function(){
+$("#start").on("click", function(){
         var word = words[Math.floor(Math.random() * words.length)];
 	 	getBlanks(word);
-    })
+	 	spentLetters = [];
+	 	correctGuess = 0;
+	 	tries = 10;
+	 	document.getElementById("solved").innerHTML = "    ";
+	 	document.getElementById("tries").innerHTML = tries;
+	 	document.getElementById("used").innerHTML = spentLetters.toString();
+
+    })	
+
 
  function getBlanks(arr) {
 
@@ -25,11 +33,6 @@ $(document).ready(function(){
 	}
 	var blanks = document.getElementById("word");
 	blanks.innerHTML = htmlElements;
-
-
-
-
-
 
 document.onkeyup = function(event) { 
 
@@ -65,10 +68,11 @@ if(correctGuess === arr.length) {
 					}
 //if you use up all your tries, you lose.					
 		if (tries === 0) {
+			document.getElementById("solved").style.color = "red";
 			document.getElementById("solved").innerHTML = "you lose";
 		
 			}
-			 
 }
 }
+		
 })
