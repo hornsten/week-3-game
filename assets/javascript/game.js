@@ -19,8 +19,8 @@ $("#start").on("click", function(){
 	 	correctGuess = 0;
 	 	tries = 10;
 	 	document.getElementById("solved").innerHTML = "    ";
-	 	document.getElementById("tries").innerHTML = tries;
-	 	document.getElementById("used").innerHTML = spentLetters.toString();
+	 	document.getElementById("tries").innerHTML = "Tries: " + tries;
+	 	document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
 
     })	
 
@@ -54,7 +54,7 @@ if(correctGuess === arr.length) {
   	wins++;
   	document.getElementById("solved").style.color = "green";
   	document.getElementById("solved").innerHTML = "You Win!";
-  	document.getElementById("wins").innerHTML = wins;
+  	document.getElementById("wins").innerHTML = "Wins: " + wins;
 }
 
 
@@ -62,9 +62,9 @@ if(correctGuess === arr.length) {
 // Handles the incorrect guesses
 		if(spentLetters.indexOf(userGuess) === -1 && arr.indexOf(userGuess) === -1){
 					spentLetters.push(userGuess);
-					document.getElementById("used").innerHTML = spentLetters.toString();
+					document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
 					tries--;
-					document.getElementById("tries").innerHTML = tries;
+					document.getElementById("tries").innerHTML = "Tries: " + tries;
 					}
 //if you use up all your tries, you lose.					
 		if (tries === 0) {
