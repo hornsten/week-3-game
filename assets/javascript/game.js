@@ -34,6 +34,7 @@ $("#start").on("click", function(){
 	var blanks = document.getElementById("word");
 	blanks.innerHTML = htmlElements;
 
+
 document.onkeyup = function(event) { 
 
 // adds correct letters to span elements in the DOM
@@ -49,12 +50,15 @@ var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 					console.log(correctGuess);
 				}
   	}	
+
 // Determines when you have won
 if(correctGuess === arr.length) {
   	wins++;
   	document.getElementById("solved").style.color = "green";
   	document.getElementById("solved").innerHTML = "You Win!";
   	document.getElementById("wins").innerHTML = "Wins: " + wins;
+  	document.onkeyup = null;
+  
 }
 
 
@@ -70,9 +74,10 @@ if(correctGuess === arr.length) {
 		if (tries === 0) {
 			document.getElementById("solved").style.color = "red";
 			document.getElementById("solved").innerHTML = "you lose";
+			document.onkeyup = null;
 		
 			}
 }
-}
-		
+
+	}	
 })
