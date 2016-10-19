@@ -18,8 +18,9 @@ $("#start").on("click", function(){
 	 	spentLetters = [];
 	 	correctGuess = 0;
 	 	tries = 10;
-	 	document.getElementById("solved").innerHTML = "    ";
+	 	document.getElementById("solved").innerHTML = "     ";
 	 	document.getElementById("tries").innerHTML = "Tries: " + tries;
+	 	document.getElementById("wins").innerHTML = "Wins: " + wins;
 	 	document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
 
     })	
@@ -52,12 +53,13 @@ var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
   	}	
 
 // Determines when you have won
-if(correctGuess === arr.length) {
-  	wins++;
+if(correctGuess >= arr.length) {
+  	document.onkeyup = null;
   	document.getElementById("solved").style.color = "green";
   	document.getElementById("solved").innerHTML = "You Win!";
+  	wins++;
   	document.getElementById("wins").innerHTML = "Wins: " + wins;
-  	document.onkeyup = null;
+ 
   
 }
 
@@ -75,7 +77,7 @@ if(correctGuess === arr.length) {
 			document.getElementById("solved").style.color = "red";
 			document.getElementById("solved").innerHTML = "you lose";
 			document.onkeyup = null;
-		
+
 			}
 }
 
