@@ -1,9 +1,5 @@
-.wrapper {
-	height: 100%;
-}
 
 body {
-	border-top: 15px dashed purple;
 	font-family: 'VT323', monospace;
 	letter-spacing: 3px;
 	font-size: 100%;
@@ -20,15 +16,20 @@ background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 /**************************/
 }
 
+.navbar {
+	border-top: 15px dashed purple;
+}
+
 .img-fluid {
 	height: auto;
 }
 
-h1 {
+h1, .page-header {
 	font-family: 'VT323', monospace;
 	color: green;
-	font-size: 10vw;
+	font-size: 15vw;
 	text-shadow: 5px 5px purple;
+	border-bottom: none;
 }
 
 p {
@@ -78,4 +79,12 @@ button:hover {
 .btn:active
 .btn:target {
 	background: #800080;
+}
+
+#slot {
+	float: left;
+	height: 100px;
+	width: 10px;
+	background: #000;
+	border-radius: 10%;
 }
