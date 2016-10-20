@@ -1,8 +1,9 @@
-var words = ['PACMAN','DIGDUG','SUPERMARIOBROS','TETRIS','CENTIPEDE','SPACEINVADERS','GALAGA','ASTEROIDS','DONKEYKONG','PONG','TRON','BURGERTIME','BERZERK','QBERT'];
+var words = ['pacman','digdug','supermariobros','tetris','centipede','spaceinvaders','galaga','asteroids','donkeykong','pong','tron','burgertime','berzerk','qbert'];
 
 var wins = 0;
 var tries = 10;
 var spentLetters = [];
+var usedCorrect = [];
 var correctGuess = 0;
 var gameStarted = false;
 // if the game hasn't started, load the big function with pressing key.  if it HAS started, load the blanks.
@@ -14,7 +15,7 @@ $(document).ready(function(){
 
 $("#start").on("click", function(){
         var word = words[Math.floor(Math.random() * words.length)];
-	 	getBlanks(word);
+	 	console.log(word);
 	 	spentLetters = [];
 	 	correctGuess = 0;
 	 	tries = 10;
@@ -23,13 +24,10 @@ $("#start").on("click", function(){
 	 	document.getElementById("wins").innerHTML = "Wins: " + wins;
 	 	document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
 
-    })	
 
-
- function getBlanks(arr) {
 
 	var htmlElements = "";
-	for (var i = 0; i < arr.length; i++) {
+	for (var i = 0; i < word.length; i++) {
    	htmlElements += '<span>_</span>';
 	}
 	var blanks = document.getElementById("word");
@@ -39,21 +37,25 @@ $("#start").on("click", function(){
 document.onkeyup = function(event) { 
 
 // adds correct letters to span elements in the DOM
-var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
+var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 				
-				for(var i = 0; i < arr.length; i++) {
+				for(var i = 0; i < word.length; i++) {
 
-				if(userGuess === arr[i]) {
-					
-
+				if(userGuess === word[i]) {
 					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess;
+
+					var x = document.getElementById("word");
+					x.getElementsByTagName("SPAN")[i].className = "filled";
 					correctGuess++;
 					console.log(correctGuess);
 				}
   	}	
 
+
 // Determines when you have won
-if(correctGuess >= arr.length) {
+var filledSpans = document.getElementsByClassName("filled");
+
+if(filledSpans.length === word.length) {
   	document.onkeyup = null;
   	document.getElementById("solved").style.color = "green";
   	document.getElementById("solved").innerHTML = "You Win!";
@@ -63,10 +65,8 @@ if(correctGuess >= arr.length) {
   
 }
 
-
-
 // Handles the incorrect guesses
-		if(spentLetters.indexOf(userGuess) === -1 && arr.indexOf(userGuess) === -1){
+		if(spentLetters.indexOf(userGuess) === -1 && word.indexOf(userGuess) === -1){
 					spentLetters.push(userGuess);
 					document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
 					tries--;
@@ -81,5 +81,6 @@ if(correctGuess >= arr.length) {
 			}
 }
 
-	}	
+	
+ })	
 })
