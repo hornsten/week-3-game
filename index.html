@@ -22,28 +22,26 @@
 	<title>Hangman Game</title>
 </head>
 <body>
-<div class="wrapper">
-<nav class="navbar navbar-justified">
+<nav class="navbar navbar-static-top">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <p class="navbar-text navbar-justified" id="tries">LIVES: </p>
-		<p class="navbar-text navbar-justified" id="wins">WINS: </p>
-			<p class="navbar-text navbar-justified blink_me" id="solved"></p>
-    </div>
+      <ul>
+      <li class="navbar-text navbar-left" id="tries">LIVES: </li>
+	<li class="navbar-text navbar-left" id="wins">WINS: </li>
+	</ul>
   </div>
 </nav>
-<div class="page-header text-center">
-<h1>HANGMAN</h1>
-</div>
+<div class="wrapper">
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xs-4 text-center">
+		<div class="col-xs-4 text-center coin">
+		<p class="blink_me" id="solved"></p>
 		<button class="text-center" id="start">Insert Coin<br>To Start<br>
 		<div id="slot"></div>
 		<p>25C</p>
 		</button>
 		</div>
 		<div class="col-xs-4 text-center">
+		<h1>HANGMAN</h1>
 		<img id="myImg" src="assets/images/arcade.jpeg" class="img-thumbnail">
 		</div>
 		<div class ="col-xs-4">

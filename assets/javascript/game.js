@@ -26,7 +26,7 @@ var gameStarted = false;
 // Creates span elements in the DOM equal to the word's length
 
 $(document).ready(function(){
-
+document.getElementById("solved").innerHTML = "PLAY";
 $("#start").on("click", function(){
         var word = words[Math.floor(Math.random() * words.length)];
 	 	var clue = word.text;
@@ -38,7 +38,7 @@ $("#start").on("click", function(){
 	 	spentLetters = [];
 	 	correctGuess = 0;
 	 	tries = 10;
-	 	document.getElementById("solved").innerHTML = "     ";
+	 	document.getElementById("solved").innerHTML = "PLAY";
 	 	document.getElementById("tries").innerHTML = "LIVES: " + tries;
 	 	document.getElementById("wins").innerHTML = "WINS: " + wins;
 	 	document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
@@ -91,7 +91,7 @@ if(filledSpans.length === clue.length) {
 					spentLetters.push(userGuess);
 					document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
 					tries--;
-					document.getElementById("tries").innerHTML = "TRIES: " + tries;
+					document.getElementById("tries").innerHTML = "LIVES: " + tries;
 					}
 //if you use up all your tries, you lose.					
 		if (tries === 0) {

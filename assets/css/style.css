@@ -24,17 +24,17 @@ background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 	height: auto;
 }
 
-h1, .page-header {
+h1 {
 	font-family: 'VT323', monospace;
 	color: green;
-	font-size: 15vw;
+	font-size: 10vw;
 	text-shadow: 5px 5px purple;
 	border-bottom: none;
 }
 
 p {
 	color: white;
-	font-size: 5vw;
+	font-size: 3vw;
 	word-wrap: break-word;
 }
 
@@ -44,6 +44,12 @@ p {
 	text-align: center;
 	font-style: bold;
 	
+}
+
+li {
+	display: inline;
+	color: white;
+	font-size: 3vw;
 }
 
 #solved {
@@ -65,7 +71,7 @@ p {
 button {
 	margin-bottom: 100px;
 	padding: 10px;
-	background: #800080;
+	background: #D4AF37;
 	color: #000;
 	font-family: 'VT323', monospace;
 	font-weight: bolder;
@@ -73,12 +79,12 @@ button {
 }
 
 button:hover {
-	background: #4B0082;
+	background: #996515;
 }
 
 .btn:active
 .btn:target {
-	background: #800080;
+	background: #D4AF37;
 }
 
 #slot {
