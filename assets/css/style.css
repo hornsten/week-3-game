@@ -20,7 +20,7 @@ background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 h1 {
 	font-family: 'Bungee Inline', cursive;
 	color: green;
-	font-size: 15vw;
+	font-size: 10vw;
 	text-shadow: 5px 5px purple;
 }
 
@@ -29,10 +29,9 @@ p {
 	font-size: 4vw;
 }
 
-span {
+#word, span {
 	color: green;
-	font-size: 4vw;
-	float: left;
+	font-size: 9vw;
 	text-align: center;
 	font-style: bold;
 	
@@ -40,8 +39,15 @@ span {
 
 #solved {
 
-	color:red;
-	font-size: 15vw;
+	font-size: 4vw;
+	font-family: 'Bungee Inline', cursive;
 }
 
+button {
+	padding: 10px;
+	background: purple;
+	color: black;
+	font-weight: bolder;
+	font-size: 3vw;
+}
 

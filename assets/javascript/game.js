@@ -35,10 +35,10 @@ $("#start").on("click", function(){
 	 	correctGuess = 0;
 	 	tries = 10;
 	 	document.getElementById("solved").innerHTML = "     ";
-	 	document.getElementById("tries").innerHTML = "Tries: " + tries;
+	 	document.getElementById("tries").innerHTML = "Lives: " + tries;
 	 	document.getElementById("wins").innerHTML = "Wins: " + wins;
 	 	document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
-
+	 	document.getElementById("word").style.color = "green";
 
 
 	var htmlElements = "";
@@ -90,6 +90,8 @@ if(filledSpans.length === clue.length) {
 		if (tries === 0) {
 			document.getElementById("solved").style.color = "red";
 			document.getElementById("solved").innerHTML = "you lose";
+			document.getElementById("word").style.color = "red";
+			document.getElementById("word").innerHTML = clue;
 			document.onkeyup = null;
 
 			}
