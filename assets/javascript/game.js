@@ -26,7 +26,9 @@ var gameStarted = false;
 // Creates span elements in the DOM equal to the word's length
 
 $(document).ready(function(){
-document.getElementById("solved").innerHTML = "PLAY";
+
+
+
 $("#start").on("click", function(){
         var word = words[Math.floor(Math.random() * words.length)];
 	 	var clue = word.text;
@@ -39,6 +41,8 @@ $("#start").on("click", function(){
 	 	correctGuess = 0;
 	 	tries = 10;
 	 	document.getElementById("solved").innerHTML = "PLAY";
+		document.getElementById("solved").className = "";
+		document.getElementById("solved").style.color = "white";
 	 	document.getElementById("tries").innerHTML = "LIVES: " + tries;
 	 	document.getElementById("wins").innerHTML = "WINS: " + wins;
 	 	document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
@@ -78,6 +82,7 @@ if(filledSpans.length === clue.length) {
   	document.onkeyup = null;
   	audio.play();
   	document.getElementById("solved").style.color = "green";
+  	document.getElementById("solved").className = "blink_me";
   	document.getElementById("solved").innerHTML = "YOU WIN!";
   	wins++;
   	document.getElementById("wins").innerHTML = "WINS: " + wins;
@@ -98,6 +103,7 @@ if(filledSpans.length === clue.length) {
 			document.getElementById("solved").style.color = "red";
 			document.getElementById("solved").innerHTML = "GAME OVER";
 			document.getElementById("word").style.color = "red";
+			document.getElementById("solved").className = "blink_me";
 			document.getElementById("word").innerHTML = clue.toUpperCase();
 			document.onkeyup = null;
 
