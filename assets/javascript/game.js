@@ -30,6 +30,8 @@ $(document).ready(function(){
 $("#start").on("click", function(){
         var word = words[Math.floor(Math.random() * words.length)];
 	 	var clue = word.text;
+	 	var coin = new Audio('assets/audio/coin.wav');
+		coin.play();
 	 	var audio = new Audio(word.sound);
 	 	audio.pause();
 	 	console.log(clue);
@@ -37,9 +39,9 @@ $("#start").on("click", function(){
 	 	correctGuess = 0;
 	 	tries = 10;
 	 	document.getElementById("solved").innerHTML = "     ";
-	 	document.getElementById("tries").innerHTML = "Lives: " + tries;
-	 	document.getElementById("wins").innerHTML = "Wins: " + wins;
-	 	document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
+	 	document.getElementById("tries").innerHTML = "LIVES: " + tries;
+	 	document.getElementById("wins").innerHTML = "WINS: " + wins;
+	 	document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
 	 	document.getElementById("word").style.color = "green";
 	 	document.getElementById("myImg").src = "assets/images/arcade.jpeg";
 
@@ -60,7 +62,7 @@ var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 				for(var i = 0; i < clue.length; i++) {
 
 				if(userGuess === clue[i]) {
-					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess;	
+					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess.toUpperCase();	
 					var x = document.getElementById("word");
 					x.getElementsByTagName("SPAN")[i].className = "filled";
 					correctGuess++;
@@ -76,9 +78,9 @@ if(filledSpans.length === clue.length) {
   	document.onkeyup = null;
   	audio.play();
   	document.getElementById("solved").style.color = "green";
-  	document.getElementById("solved").innerHTML = "You Win!";
+  	document.getElementById("solved").innerHTML = "YOU WIN!";
   	wins++;
-  	document.getElementById("wins").innerHTML = "Wins: " + wins;
+  	document.getElementById("wins").innerHTML = "WINS: " + wins;
  	document.getElementById("myImg").src = word.url;
   	
 
@@ -87,16 +89,16 @@ if(filledSpans.length === clue.length) {
 // Handles the incorrect guesses
 		if(spentLetters.indexOf(userGuess) === -1 && clue.indexOf(userGuess) === -1){
 					spentLetters.push(userGuess);
-					document.getElementById("used").innerHTML = "Incorrect Guesses: " + spentLetters.toString();
+					document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
 					tries--;
-					document.getElementById("tries").innerHTML = "Tries: " + tries;
+					document.getElementById("tries").innerHTML = "TRIES: " + tries;
 					}
 //if you use up all your tries, you lose.					
 		if (tries === 0) {
 			document.getElementById("solved").style.color = "red";
-			document.getElementById("solved").innerHTML = "you lose";
+			document.getElementById("solved").innerHTML = "GAME OVER";
 			document.getElementById("word").style.color = "red";
-			document.getElementById("word").innerHTML = clue;
+			document.getElementById("word").innerHTML = clue.toUpperCase();
 			document.onkeyup = null;
 
 			}

@@ -14,8 +14,7 @@
 
 <!-- Google Fonts -->
 
-<link href="https://fonts.googleapis.com/css?family=Bungee+Hairline|Bungee+Inline" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|VT323" rel="stylesheet">
 
 <!-- My javascript files -->
 <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>	
@@ -27,19 +26,19 @@
 	<div class="container-fluid text-center">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Hangman</h1>
+			<h1>HANGMAN</h1>
 		</div>
 	</div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid wrapper">
 	<div class="row">
 		<div class="col-xs-4 id="stats">
 			<p id="tries"></p>
 			<p id="wins"></p>
-			<p id="solved"></p>
+			<p class="blink_me" id="solved"></p>
 		</div>
 		<div class="col-xs-4 text-center">
-			<img id="myImg" src="assets/images/arcade.jpeg" width="200" height="200">
+			<img id="myImg" src="assets/images/arcade.jpeg" class="img-thumbnail">
 			<audio id="myAudio"></audio>
 		</div>
 		<div class="col-xs-4"> 
@@ -55,7 +54,8 @@
 	<div class="container-fluid">
 <div class="row text-center">
 	<div class="col-xs-4"></div>
-	<div class="col-xs-4"><button id="start">Press To Start</button></div>
+	<div class="col-xs-4">
+	<button id="start">Insert Coin To Start</button></div>
 	<div class="col-xs-4"></div>
 </div>
 </div>
