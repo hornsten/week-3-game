@@ -106,6 +106,8 @@ if(filledSpans.length === clue.length) {
 			document.getElementById("solved").className = "blink_me";
 			document.getElementById("word").innerHTML = clue.toUpperCase();
 			document.onkeyup = null;
+			var gameOver = new Audio('assets/audio/pacman_death.wav');
+			gameOver.play();
 
 			}
 }
