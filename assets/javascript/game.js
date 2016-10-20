@@ -1,11 +1,19 @@
 var words = [
-  { url: 'https://pixabay.com/static/uploads/photo/2013/07/12/14/58/indonesian-149128_960_720.png', text: 'pacman', sound: 'pacman.mp3' },
-  { url: 'https://pixabay.com/static/uploads/photo/2013/07/12/12/57/ghost-146620_960_720.png', text: 'mario', sound: 'mario.mp3'},
-  { url: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR9hsBA2tKTpSidZZcBoW-vUkUekatTndWWEJ3sozU5Pz47G8gF', text: 'digdug', sound: 'digdug.mp3'}
+  {text: 'pacman', url: 'assets/images/pacman.gif', sound: 'assets/audio/pacman_beginning.wav'},
+  {text: 'digdug', url: 'assets/images/digdug.gif', sound: '#'},
+  {text: 'tetris', url: 'assets/images/tetris.jpeg', sound:'#' },
+  {text: 'supermariobros', url:'assets/images/mario.gif', sound: '#'},
+  {text: 'centipede', url:'assets/images/centipede.jpeg', sound: '#'},
+  {text: 'spaceinvaders', url:'assets/images/space_invaders.gif', sound: '#'},
+  {text: 'galaga', url:'assets/images/galaga.jpeg', sound: '#'},
+  {text: 'asteroids', url:'assets/images/asteroids.gif', sound: '#'},
+  {text: 'donkeykong', url:'assets/images/donkeykong.gif', sound: '#'},
+  {text: 'pong', url:'assets/images/pong.gif', sound: '#'},
+  {text: 'tron', url:'assets/images/tron.jpeg', sound: '#'},
+  {text: 'burgertime', url:'assets/images/burgertime.gif', sound: '#'},
+  {text: 'berzerk', url:'assets/images/berzerk.png', sound: '#'},
+  {text: 'qbert', url:'assets/images/qbert.png', sound: '#'}
 ];
-
-
-//'digdug','supermariobros','tetris','centipede','spaceinvaders','galaga','asteroids','donkeykong','pong','tron','burgertime','berzerk','qbert'];
 
 var wins = 0;
 var tries = 10;
@@ -49,8 +57,7 @@ var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 				for(var i = 0; i < clue.length; i++) {
 
 				if(userGuess === clue[i]) {
-					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess;
-
+					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess;	
 					var x = document.getElementById("word");
 					x.getElementsByTagName("SPAN")[i].className = "filled";
 					correctGuess++;
@@ -68,7 +75,6 @@ if(filledSpans.length === clue.length) {
   	document.getElementById("solved").innerHTML = "You Win!";
   	wins++;
   	document.getElementById("wins").innerHTML = "Wins: " + wins;
- 	document.getElementById("myAudio").src = word.sound;
  	document.getElementById("myImg").src = word.url;
   
 }
