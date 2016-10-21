@@ -19,10 +19,6 @@ var wins = 0;
 var tries = 10;
 var spentLetters = [];
 var usedCorrect = [];
-var correctGuess = 0;
-var gameStarted = false;
-
-
 
 // When document is loaded, click button to start.  startButton chooses at random 
 // from the words object above.  The stats are refreshed.  On replay, only the wins button
@@ -72,8 +68,7 @@ var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess.toUpperCase();	
 					var x = document.getElementById("word");
 					x.getElementsByTagName("SPAN")[i].className = "filled";
-					correctGuess++;
-					console.log(correctGuess);
+					
 				}
   	}	
 
