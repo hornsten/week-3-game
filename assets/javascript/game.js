@@ -98,6 +98,7 @@ if(filledSpans.length === clue.length) {
 					tries--;
 					document.getElementById("tries").innerHTML = "LIVES: " + tries;
 					}
+					
 //if you use up all your tries, you lose.					
 		if (tries === 0) {
 			document.getElementById("solved").style.color = "red";

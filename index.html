@@ -23,37 +23,33 @@
 </head>
 <body>
 <nav class="navbar navbar-static-top">
-  <div class="container-fluid">
       <ul>
       <li class="navbar-text navbar-left" id="tries">LIVES: </li>
 	<li class="navbar-text navbar-left" id="wins">WINS: </li>
 	<p class="navbar-text navbar-left" id="used">WRONG GUESSES: </p>
 	</ul>
-  </div>
 </nav>
-<div class="wrapper">
-<div class="container-fluid">
+<div class="container-fluid text-center">
 	<div class="row">
-		<div class="col-xs-4 text-center coin">
-		<p id="solved">PLAY</p>
-		<button class="text-center" id="start">Insert Coin<br>To Start<br>
-		<div id="slot"></div>
-		<p>25C</p>
-		</button>
-		</div>
-		<div class="col-xs-4 text-center">
-		<h1>HANGMAN</h1>
+			<div class="col-sm-3">
+		<div class="coin">
+			<p id="solved">PLAY</p>
+			<button class="text-center" id="start">Insert Coin<br>To Start<br>
+			<div id="slot"></div>
+			<p>25C</p>
+			</button>
+	</div>
+	</div>
+	<div class="col-sm-9">
+	<div id="screen">
+				<h1>HANGMAN</h1>
 		<img id="myImg" src="assets/images/arcade.jpeg" class="img-thumbnail">
-		</div>
-		<div class ="col-xs-4">
-		<audio id="myAudio"></audio>	
-		</div>
+		<audio id="myAudio"></audio>
+		<div class="text-center" id="word">
 		</div>
 		</div>
-		<div class="row text-center">
-		<div class="col-xs-12" text-center" id="word">	
 		</div>
-</div>
-</div>
+	</div>
+	</div>
 </body>
 </html>

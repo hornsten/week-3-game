@@ -3,39 +3,40 @@ body {
 	font-family: 'VT323', monospace;
 	letter-spacing: 3px;
 	font-size: 100%;
+	background-image: url('../images/background.jpeg');
+	margin: 0 auto;
 
-/*Creates starry background*/
-background-color:black;
-background-image:
-radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
-background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-/**************************/
 }
 
 .navbar {
 	border-top: 15px dashed purple;
 }
 
-.img-fluid {
-	height: auto;
+.img-thumbnail {
+   
+    max-height: 40vh;
+    max-width: 40vw;
+    text-align: center;
+
+ 
 }
 
 h1 {
-	font-family: 'VT323', monospace;
+	font-family: 'Bungee Inline', monospace;
 	color: green;
 	font-size: 10vw;
 	text-shadow: 5px 5px purple;
 	border-bottom: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
 }
 
 p {
 	color: white;
 	font-size: 3vw;
 	word-wrap: break-word;
+
 }
 
 #word, span {
@@ -61,7 +62,7 @@ li {
 }
 
 .blink_me {
-  animation: blinker 1s linear infinite;
+  animation: blinker 0.5s linear infinite;
 }
 
 @keyframes blinker {  
@@ -70,8 +71,7 @@ li {
 
 
 button {
-	margin-bottom: 100px;
-	padding: 10px;
+	padding: 5px;
 	background: #D4AF37;
 	color: #000;
 	font-family: 'VT323', monospace;
@@ -88,9 +88,26 @@ button:hover {
 	background: #D4AF37;
 }
 
+#screen {
+	border: 2vw inset #ccc;
+	border-radius: 10%;
+	height: 86vh;
+	width: 65vw;
+	/*Creates starry background*/
+background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+/**************************/
+}
+
 #slot {
-	float: left;
-	height: 100px;
+	float:left;
+	height: 70px;
 	width: 10px;
 	background: #000;
 	border-radius: 10%;
