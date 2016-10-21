@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-	<!-- reset.css link -->
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- reset.css link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- My stylesheet -->
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- My stylesheet -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-<!-- Google Fonts -->
+    <!-- Google Fonts -->
 
-<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|VT323" rel="stylesheet">
 
-<!-- My javascript files -->
-<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>	
-<script src="assets/javascript/game.js"></script>
-	<title>Hangman Game</title>
+    <!-- My javascript files -->
+    <script src="https://use.fontawesome.com/0a8fdf40e6.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+    <!-- Title -->
+    <title>Hangman Game</title>
 </head>
+
 <body>
-<div class="container-fluid text-center">
-	<div class="row">
-			<div class="col-xs-3">
-		<div class="coin">
-			<button class="text-center" id="start">Insert Coin<br>To Start<br>
-			<div id="slot"></div>
-			<p>25C</p>
-			</button>
-			<p id="used">WRONG GUESSES: </p>
-	</div>
-	</div>
-	<div class="col-xs-9">
-	<div id="screen">
-	 <ul>
-      <li class="navbar-text navbar-left" id="tries">LIVES: </li>
-	<li class="navbar-text navbar-left" id="wins">WINS: </li>
-	<li class="navbar-text navbar-left"><p id="solved"></p></li>
-	</ul>
-				<h1>HANGMAN</h1>
-		<img id="myImg" src="assets/images/arcade.jpeg" class="img-thumbnail">
-		<audio id="myAudio"></audio>
-		<div class="text-center" id="word">
-		</div>
-		</div>
-		</div>
-	</div>
-	</div>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="coin">
+                    <button class="text-center" id="start">INSERT TOKEN
+                        <br><i class="fa fa-minus fa-rotate-90 fa-5x" aria-hidden="true"></i>
+                    </button>
+                    <p id="used">WRONG GUESSES: </p>
+                </div>
+            </div>
+            <div class="col-xs-9">
+                <div id="screen">
+                    <ul>
+                        <li class="navbar-text navbar-left" id="tries">LIVES: </li>
+                        <li class="navbar-text navbar-left" id="wins">WINS: </li>
+                        <li class="navbar-text navbar-left">
+                            <p id="solved"></p>
+                        </li>
+                    </ul>
+                    <h1>HANGMAN</h1>
+                    <img id="myImg" src="assets/images/arcade.jpeg" class="img-thumbnail" alt="Arcade">
+                    <audio id="myAudio"></audio>
+                    <div class="text-center" id="word">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
