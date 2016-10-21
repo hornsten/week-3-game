@@ -27,9 +27,7 @@ var gameStarted = false;
 
 $(document).ready(function(){
 
-
-
-$("#start").on("click", function(){
+var startButton = $("#start").on("click", function(){
         var word = words[Math.floor(Math.random() * words.length)];
 	 	var clue = word.text;
 	 	var coin = new Audio('assets/audio/coin.wav');
@@ -48,6 +46,7 @@ $("#start").on("click", function(){
 	 	document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
 	 	document.getElementById("word").style.color = "green";
 	 	document.getElementById("myImg").src = "assets/images/arcade.jpeg";
+
 
 
 	var htmlElements = "";
@@ -87,8 +86,10 @@ if(filledSpans.length === clue.length) {
   	wins++;
   	document.getElementById("wins").innerHTML = "WINS: " + wins;
  	document.getElementById("myImg").src = word.url;
-  	
-
+ 		setTimeout(function(){
+ 			startButton.click();
+ 			audio.pause();
+			},4000); 
 }
 
 // Handles the incorrect guesses
@@ -109,6 +110,10 @@ if(filledSpans.length === clue.length) {
 			document.onkeyup = null;
 			var gameOver = new Audio('assets/audio/pacman_death.wav');
 			gameOver.play();
+			setTimeout(function(){
+ 				startButton.click();
+
+				},2000); 
 
 			}
 }
