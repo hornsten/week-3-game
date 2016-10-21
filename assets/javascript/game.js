@@ -40,7 +40,7 @@ $("#start").on("click", function(){
 	 	spentLetters = [];
 	 	correctGuess = 0;
 	 	tries = 10;
-	 	document.getElementById("solved").innerHTML = "PLAY";
+	 	document.getElementById("solved").innerHTML = "PLAYER 1";
 		document.getElementById("solved").className = "";
 		document.getElementById("solved").style.color = "white";
 	 	document.getElementById("tries").innerHTML = "LIVES: " + tries;

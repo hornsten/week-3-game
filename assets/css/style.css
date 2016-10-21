@@ -15,7 +15,6 @@ body {
 .img-thumbnail {
   	min-height: 30vh;
     max-height: 35vh;
-    min-width: 40vw;
     max-width: 40vw;
     text-align: center;
 
@@ -72,6 +71,7 @@ li {
 
 
 button {
+	margin-top: 20px;
 	padding: 5px;
 	background: #D4AF37;
 	color: #000;
@@ -92,8 +92,8 @@ button:hover {
 #screen {
 	border: 2vw inset #ccc;
 	border-radius: 10%;
-	height: 86vh;
-	width: 65vw;
+	height: 100vh;
+	width: 70vw;
 	/*Creates starry background*/
 background-color:black;
 background-image:
