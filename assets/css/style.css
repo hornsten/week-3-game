@@ -8,7 +8,7 @@ body {
 #screen {
     border: 2vw inset #ccc;
     border-radius: 10%;
-    height: 100vh;
+    min-height: 104vh;
     width: 70vw;
     /*Creates starry background*/
     
@@ -63,9 +63,10 @@ li {
     font-size: 3vw;
 }
 .img-thumbnail {
-    min-height: 30vh;
+    min-height: 35vh;
     max-height: 35vh;
     max-width: 40vw;
+    min-width: 30vw;
     text-align: center;
 }
 #word,
@@ -74,6 +75,7 @@ span {
     font-size: 9vw;
     text-align: center;
     font-style: bold;
+    text-align: center;
 }
 #solved {
     font-size: 3vw;
