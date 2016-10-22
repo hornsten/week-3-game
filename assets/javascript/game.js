@@ -20,9 +20,9 @@ var tries = 10;
 var spentLetters = [];
 var usedCorrect = [];
 
-// When document is loaded, click button to start.  startButton chooses at random 
-// from the words object above.  The stats are refreshed.  On replay, only the wins button
-// will keep its tally.
+// When document is loaded, click button to start.  startButton chooses a random 
+// arcade game for the player to guess.  Everything but wins will be refreshed each
+//time the game is played.
 
 $(document).ready(function(){
 
@@ -54,9 +54,9 @@ var startButton = $("#start").on("click", function(){
 	var blanks = document.getElementById("word");
 	blanks.innerHTML = htmlElements;
 
-//After the user presses a key, this function loops through the chosen word (var clue) to find out
-//whether that letter is in the word.  If so, it puts the letter into the corresponding <span> element.
-//Then, it applies the class "filled" to that <span>.
+/*After the user presses a key, this function loops through the chosen word (var clue) to find out
+	whether that letter is in the word.  If so, it puts the letter into the corresponding <span> element.
+	Then, it applies the class "filled" to that <span>.*/
 
 document.onkeyup = function(event) { 
 
@@ -66,16 +66,16 @@ var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
 
 				if(userGuess === clue[i]) {
 					document.getElementsByTagName("SPAN")[i].innerHTML = userGuess.toUpperCase();	
-					var x = document.getElementById("word");
-					x.getElementsByTagName("SPAN")[i].className = "filled";
+					var applyClass = document.getElementById("word");
+					applyClass.getElementsByTagName("SPAN")[i].className = "filled";
 					
 				}
   	}	
 
 
-// Determines when the user has won the game by comparing the number of "filled" <spans> with the
-//number of letters in the word.  If the user has won, a song and image representing the clue pop up.
-//Wins increase by 1, and the game restarts automatically after 5 seconds.
+/* Determines when the user has won the game by comparing the number of "filled" <spans> with the
+	number of letters in the word.  If the user has won, a song and image representing the clue pop up.
+	Wins increase by 1, and the game restarts automatically after 5 seconds.*/
 
 var filledSpans = document.getElementsByClassName("filled");
 
@@ -94,9 +94,10 @@ if(filledSpans.length === clue.length) {
 			},5000); 
 }
 
-//If the player guesses incorrectly, the used letters are pushed into an array called spentLetters.
-//I also make sure that the letter is not already in the array, so that the player can only use
-//each letter once.
+/*If the player guesses incorrectly, the used letters are pushed into an array called spentLetters.
+	I also make sure that the letter is not already in the array, so that the player can only use
+	each letter once.*/
+
 		if(spentLetters.indexOf(userGuess) === -1 && clue.indexOf(userGuess) === -1){
 					spentLetters.push(userGuess);
 					document.getElementById("used").innerHTML = "WRONG GUESSES: " + spentLetters.toString().toUpperCase();
@@ -104,8 +105,8 @@ if(filledSpans.length === clue.length) {
 					document.getElementById("tries").innerHTML = "LIVES: " + tries;
 					}
 					
-//If there are no more tries left, the player loses.  The clue is displayed in red, GAME OVER flashes,
-//and a losing sound plays.  The game restarts automatically after 2 seconds.  
+/*If there are no more tries left, the player loses.  The clue is displayed in red, GAME OVER flashes,
+and a losing sound plays.  The game restarts automatically after 2 seconds.*/
 
 		if (tries === 0) {
 			document.getElementById("solved").style.color = "red";
